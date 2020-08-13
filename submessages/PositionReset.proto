@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+import "submessages/Position.proto";
+
+message PositionReset 
+{
+    Position PositionInches = 1;
+}

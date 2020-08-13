@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "submessages/RobotPosition.proto";
+
+message StatusMessage
+{
+    oneof packet
+    {
+        RobotPosition RobotPosition = 1;
+    }
+}

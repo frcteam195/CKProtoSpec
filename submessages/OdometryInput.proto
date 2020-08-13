@@ -1,0 +1,18 @@
+syntax = "proto3";
+import "submessages/Translation.proto";
+import "submessages/Rotation.proto";
+
+message OdometryConfig
+{
+    Translation RobotToCameraTranslationInches = 1;
+    Rotation CameraRotationDegrees = 2;
+    float WheelBaseInches = 3;
+    float WheelDiameterInches = 4;
+}
+
+message OdometryUpdate
+{
+    float LeftWheelRotations = 1;
+    float RightWheelRotations = 2;
+}
+

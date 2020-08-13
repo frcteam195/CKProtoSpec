@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+import "submessages/Position.proto";
+import "submessages/Rotation.proto";
+
+message RobotPosition
+{
+    Position PositionInches = 1;
+    Rotation RotationDegrees = 2;
+}

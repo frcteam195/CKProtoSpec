@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+import "submessages/OdometryInput.proto";
+import "submessages/PositionReset.proto";
+
+message ControlMessage
+{
+    oneof packet
+    {
+        OdometryConfig OdometryConfig = 1;
+        OdometryUpdate OdometryUpdate = 2;
+        PositionReset PositionReset = 3;
+    }
+}
