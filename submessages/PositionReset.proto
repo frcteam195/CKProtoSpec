@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+option java_package = "com.team195.frc.telemetryfusion";
+option java_outer_classname = "PositionReset";
+
 import "submessages/Position.proto";
 
 message PositionReset 
