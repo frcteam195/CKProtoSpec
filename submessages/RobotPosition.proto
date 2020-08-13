@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 option java_package = "com.team195.frc.telemetryfusion";
-option java_outer_classname = "RobotPosition";
 
 import "submessages/Position.proto";
 import "submessages/Rotation.proto";
