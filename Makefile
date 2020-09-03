@@ -13,7 +13,7 @@ VPATH = $(shell dirname ${SOURCES} | tr '\n' ':')
 INCLUDE = $(subst ${space}, -I,$(shell dirname ${SOURCES}))\
 		  -I../protobuf/src
 
-TARGET = libfrcinterface
+TARGET = libfrcinterface.a
 
 all: generation
 
