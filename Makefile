@@ -10,7 +10,8 @@ OBJECTS = $(addprefix obj/,$(PROTO_BASE_FILES:.proto=.pb.o))
 space := $(subst ,, )
 
 VPATH = $(shell dirname ${SOURCES} | tr '\n' ':')
-INCLUDE = $(subst ${space}, -I,$(shell dirname ${SOURCES}))
+INCLUDE = $(subst ${space}, -I,$(shell dirname ${SOURCES}))\
+		  -I../protobuf/src
 
 TARGET = libfrcinterface
 
@@ -31,7 +32,7 @@ generation:
 	@mkdir -p lib
 	@mkdir -p generated
 	@mkdir -p obj
-	@for f in ${PROTO_FILES}; do protoc $$f --cpp_out=generated; echo "Generating $$f"; done
+	@for f in ${PROTO_FILES}; do ../protobuf/build/protoc $$f --cpp_out=generated; echo "Generating $$f"; done
 	@make --no-print-directory target
 
 $(TARGET): $(OBJECTS)
